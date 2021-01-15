@@ -1,6 +1,15 @@
+# generate message.gen.hpp from message.idl
+add_custom_command (
+  OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/message.gen.hpp
+  MAIN_DEPENDENCY message.idl
+  COMMAND idl ${CMAKE_CURRENT_SOURCE_DIR}/message.idl ${CMAKE_CURRENT_SOURCE_DIR}/message.gen
+)
+
 # define the executable
 add_executable(test
-    main.cpp)
+    main.cpp
+    message.gen.hpp
+    message.hpp)
 
 # libraries this module links to
 target_link_libraries(test PRIVATE

@@ -17,10 +17,7 @@ install(TARGETS persistence_test
         DESTINATION ${PERSISTENCE_TEST_INSTALL_DESTINATION_LIBRARY})
 
 set(SRC_FILES
-    global.hpp
-    admin_server.hpp
-    storage_server.hpp
-    worker.hpp)
+    global.hpp)
 
 install(FILES
     ${SRC_FILES}
